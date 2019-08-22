@@ -81,8 +81,12 @@ object mijo {
 	}
 }	
 
-object canelones(){
+object canelones {
+	var agregado 
 	
+	method agregarQueso(){
+		agregado = "queso"
+	}
 }
 
 
