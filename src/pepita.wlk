@@ -1,3 +1,4 @@
+// Etapa 1
 object pepita {
 	var energia = 100
 
@@ -13,24 +14,25 @@ object pepita {
 		energia = energia + comida.energiaQueOtorga()
 	}
 	
+// Etapa 2	
 	method estaFeliz() {
 		return energia.between(100, 500)
 	}
 	
-	method vueloExtra(){
+	method energiaEntre300_400(){
 		if(energia.between(300, 400))
 		return 10
 		else return 0
 	}
 	
-	method vueloExtra2(){
+	method energiaMultiplo20(){
 		if(energia % 20 == 0)
 			return 15
 		else return 0
 	}
 	
 	method cuantoQuiereVolar(){
-		return (energia / 5) + self.vueloExtra() + self.vueloExtra2()
+		return (energia / 5) + self.energiaEntre300_400() + self.energiaMultiplo20()
 	}
 	
 	method salirAComer(){
@@ -39,6 +41,12 @@ object pepita {
 		self.vola(20)
 	}
 	
+	method haceLoQueQuieras(){
+		if(self.estaFeliz())
+			self.vola(8)
+		else if(self.estaCansada())
+			self.come(alpiste)
+	}
 }
 
 object alpiste {
@@ -82,11 +90,41 @@ object mijo {
 }	
 
 object canelones {
-	var agregado 
+	var queso = false
+	var salsa = false
+	
+	method energiaQueOtorga(){
+		return 20 + self.energiaQueso() + self.energiaSalsa()
+	}
+	
+	method energiaQueso(){
+		if(queso)
+			return 7
+		else return 0
+	}
+	
+	method energiaSalsa(){
+		if(salsa)
+			return 5
+		else return 0
+	}
 	
 	method agregarQueso(){
-		agregado = "queso"
+		queso = true 	
 	}
+	
+	method agregarSalsa(){
+		salsa = true	
+	}
+	
+	method quiatrQueso(){
+		queso = false 	
+	}
+	
+	method quitarSalsa(){
+		salsa = false	
+	}
+	
 }
 
 
