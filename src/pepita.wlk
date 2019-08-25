@@ -127,4 +127,15 @@ object canelones {
 	
 }
 
+//Etapa 3
+
+object roque {
+	
+	method entrenar(){
+		pepita.vola(10)
+		pepita.come(alpiste)
+		pepita.vola(5)
+		pepita.haceLoQueQuieras()
+	}
+}
 
